@@ -15,14 +15,13 @@ spec:
     spec:
       project: default
       source:
-        repoURL: https://github.com/maruina/appset-poc.git
+        repoURL: https://github.com/zaitsxl/appset-poc.git
         targetRevision: HEAD
         path: goinfra
         helm:
           releaseName: "goinfra"
           valueFiles:
             - "values.yaml"
-            - "values-{{cluster}}.yaml"
           parameters:
             - name: go-infrabin.podAnnotations.gitsha #mshell-service.deployment.image.tag
               value: ${ARGOCD_APP_REVISION}
